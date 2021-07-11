@@ -25,7 +25,7 @@ class _MyFormState extends State<MyForm> {
   saveForm() {
     // formKey.currentState.save();
     Navigator.of(context).push(MaterialPageRoute(builder: (contex) {
-      return HomePage(formUser);
+      return HomePage();
     }));
   }
 

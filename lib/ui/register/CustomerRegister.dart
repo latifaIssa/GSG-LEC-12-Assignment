@@ -5,6 +5,8 @@ import 'package:flutter_application_4/ui/home/ui/home_page.dart';
 import 'package:flutter_application_4/ui/register/FormSubmitButton.dart';
 import 'package:string_validator/string_validator.dart';
 
+import '../../globals.dart';
+
 class CustomerRegister extends StatelessWidget {
   String emailAddress;
   String password;
@@ -121,10 +123,11 @@ class CustomerRegister extends StatelessWidget {
                   password: password,
                   phone: phone,
                 );
+                Globals.globals.formUser = formUser;
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) {
-                      return HomePage(formUser);
+                      return HomePage();
                     },
                   ),
                 );

@@ -5,6 +5,8 @@ import 'package:flutter_application_4/ui/home/ui/home_page.dart';
 import 'package:flutter_application_4/ui/register/FormSubmitButton.dart';
 import 'package:string_validator/string_validator.dart';
 
+import '../../globals.dart';
+
 class MershantRegister extends StatefulWidget {
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   MershantRegister(this.formKey);
@@ -200,11 +202,11 @@ class _MershantRegisterState extends State<MershantRegister> {
                     bio: bio,
                     category: category,
                   );
-
+                  Globals.globals.formUser = formUser;
                   Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (context) {
-                        return HomePage(formUser);
+                        return HomePage();
                       },
                     ),
                   );

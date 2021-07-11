@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_4/models/user_form.dart';
 import 'package:flutter_application_4/ui/register/LoginForm.dart';
 
+import '../../../globals.dart';
+
 class HomePage extends StatelessWidget {
-  FormUser formUser;
-  HomePage(this.formUser);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,9 +17,9 @@ class HomePage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Text(
-            formUser.userType == User.customer
-                ? 'hi I am customer, my email is ${formUser.emailAddress} and my password is ${formUser.password}'
-                : 'hi I am mershant, my email is ${formUser.emailAddress} and my password is ${formUser.password}, my shop name is  ${formUser.shopeName}, and its place in  ${formUser.shopAddress},  ${formUser.bio}',
+            Globals.globals.formUser.userType == User.customer
+                ? 'hi I am customer, my email is ${Globals.globals.formUser.emailAddress} and my password is ${Globals.globals.formUser.password}'
+                : 'hi I am mershant, my email is ${Globals.globals.formUser.emailAddress} and my password is ${Globals.globals.formUser.password}, my shop name is  ${Globals.globals.formUser.shopeName}, and its place in  ${Globals.globals.formUser.shopAddress},  ${Globals.globals.formUser.bio}',
           ),
           ElevatedButton(
             child: Text('SignOut'),
