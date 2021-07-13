@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_4/models/user_form.dart';
-import 'package:flutter_application_4/ui/register/LoginForm.dart';
+import 'package:flutter_application_4/ui/register/signUpForm.dart';
 
 import '../../../globals.dart';
 

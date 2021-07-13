@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_4/MyFormTextField.dart';
 import 'package:flutter_application_4/models/user_form.dart';
 import 'package:flutter_application_4/ui/home/ui/home_page.dart';
-import 'package:flutter_application_4/ui/register/FormSubmitButton.dart';
+import 'package:flutter_application_4/ui/register/MyFormTextField.dart';
 import 'package:string_validator/string_validator.dart';
 
 import '../../globals.dart';

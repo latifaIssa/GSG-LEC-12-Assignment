@@ -5,8 +5,6 @@ import 'package:flutter_application_4/ui/home/ui/home_page.dart';
 import 'package:flutter_application_4/ui/register/CustomerRegister.dart';
 import 'package:flutter_application_4/ui/register/MershantRegister.dart';
 
-import 'FormSubmitButton.dart';
-
 // enum Gender { male, female }
 enum User { customer, mershant }
 
@@ -21,7 +19,7 @@ class _MyFormState extends State<MyForm> {
 
   FormUser formUser;
 
-  //after call this, all save function will be execute
+  //after call this, all save function will be executed
   saveForm() {
     // formKey.currentState.save();
     Navigator.of(context).push(MaterialPageRoute(builder: (contex) {

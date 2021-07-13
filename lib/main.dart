@@ -1,6 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_4/ui/register/LoginForm.dart';
+import 'package:flutter_application_4/ui/register/signUpForm.dart';
 
 void main() {
   runApp(MaterialApp(
