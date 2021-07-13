@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_4/MyFormTextField.dart';
+import 'package:flutter_application_4/Router/router.dart';
 import 'package:flutter_application_4/models/user_form.dart';
 import 'package:flutter_application_4/ui/home/ui/home_page.dart';
 import 'package:flutter_application_4/ui/register/FormSubmitButton.dart';
@@ -7,7 +8,7 @@ import 'package:string_validator/string_validator.dart';
 
 class MershantRegister extends StatefulWidget {
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  MershantRegister(this.formKey);
+  MershantRegister();
   @override
   _MershantRegisterState createState() => _MershantRegisterState();
 }
@@ -201,13 +202,42 @@ class _MershantRegisterState extends State<MershantRegister> {
                     category: category,
                   );
 
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return HomePage(formUser);
-                      },
-                    ),
-                  );
+                  // String result = await Navigator.of(context).push(
+                  //   MaterialPageRoute(
+                  //     builder: (context) {
+                  //       return HomePage(formUser);
+                  //     },
+                  //   ),
+                  // );
+                  // // return result;
+                  // print(result);
+                  // String result = await Navigator.of(context).pushReplacement(
+                  //   MaterialPageRoute(
+                  //     builder: (context) {
+                  //       return HomePage(formUser);
+                  //     },
+                  //   ),
+                  // );
+                  // // return result;
+                  // print(result);
+
+                  //remove pages until x=2
+                  // int x = 0;
+                  // String result = await Navigator.of(context).pushAndRemoveUnti(
+                  //     MaterialPageRoute(
+                  //   builder: (context) {
+                  //     return HomePage(formUser);
+                  //   },
+                  // ), (r) => x++ == 2);
+                  // // return result;
+                  // print(result);
+
+                  //give name to the route
+                  // dynamic result = Navigator.of(context)
+                  //     .pushNamed('home', arguments: formUser);
+                  // // return result;
+                  // print(result);
+                  AppRouter.router.pushFunction(HomePage(formUser));
                 }
               },
               child: Text('Sign Up As Mershant'),

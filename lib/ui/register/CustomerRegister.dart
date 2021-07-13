@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_4/MyFormTextField.dart';
+import 'package:flutter_application_4/Router/router.dart';
 import 'package:flutter_application_4/models/user_form.dart';
 import 'package:flutter_application_4/ui/home/ui/home_page.dart';
 import 'package:flutter_application_4/ui/register/FormSubmitButton.dart';
@@ -32,7 +33,7 @@ class CustomerRegister extends StatelessWidget {
   }
 
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  CustomerRegister(this.formKey);
+  CustomerRegister();
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -112,7 +113,7 @@ class CustomerRegister extends StatelessWidget {
             // },
           ),
           ElevatedButton(
-            onPressed: () {
+            onPressed: () async {
               if (formKey.currentState.validate()) {
                 formKey.currentState.save();
                 FormUser formUser = FormUser.customer(
@@ -121,13 +122,19 @@ class CustomerRegister extends StatelessWidget {
                   password: password,
                   phone: phone,
                 );
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return HomePage(formUser);
-                    },
-                  ),
-                );
+                // String result = await Navigator.of(context).push(
+                //   MaterialPageRoute(
+                //     builder: (context) {
+                //       return HomePage(formUser);
+                //     },
+                //   ),
+                // );
+                // dynamic result =
+                //     Navigator.pushNamed(context, '/home', arguments: formUser);
+
+                // return result;
+                // print(result);
+                AppRouter.router.pushFunction(HomePage(formUser));
               }
             },
             child: Text('Sign Up As Customer'),

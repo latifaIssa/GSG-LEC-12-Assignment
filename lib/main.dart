@@ -1,35 +1,130 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_4/Router/router.dart';
+import 'package:flutter_application_4/models/user_form.dart';
+import 'package:flutter_application_4/ui/home/ui/home_page.dart';
+import 'package:flutter_application_4/ui/login/login.dart';
 import 'package:flutter_application_4/ui/register/LoginForm.dart';
 
 void main() {
-  runApp(MaterialApp(
-    home: MyApp(),
-  ));
+  runApp(MyApp());
 }
+
+// void main() {
+//   runApp(MaterialApp(
+// routes: {
+//   '/': (context) => MyForm(),
+//   // 'home': (context) => HomePage(),
+// },
+// onGenerateRoute: (RouteSettings routeSettings) {
+//   String name = routeSettings.name;
+//   var arguments = routeSettings.arguments;
+
+//   if (name == 'home') {
+//     return MaterialPageRoute(builder: (context) {
+//       return HomePage(arguments);
+//     });
+//   } else  if (name == 'register') {
+//     return MaterialPageRoute(builder: (context) {
+//       return HomePage(arguments);
+//     });
+//   }
+// },
+// navigatorKey: AppRouter.router.navKey,
+// // onGenerateRoute: (RouteSettings routesettings) {
+// //   String name = routesettings.name;
+// //   var arguments = routesettings.arguments;
+// //   switch (name) {
+// //     case ('/home'):
+// //       return MaterialPageRoute(builder: (context) {
+// //         return HomePage(arguments);
+// //       });
+// //       break;
+// //     case ('/login'):
+// //       return MaterialPageRoute(builder: (context) {
+// //         return LoginPage();
+// //       });
+// //       break;
+// //     default:
+// //       return MaterialPageRoute(builder: (context) {
+// //         return Scaffold(
+// //           backgroundColor: Colors.red,
+// //           body: Center(
+// //             child: Text('404 Page not found'),
+// //           ),
+// //         );
+// //       });
+//   }
+// },
+// onUnknownRoute: (RouteSettings routeSetting){
+
+// },
+//     home: MyApp(),
+//   ));
+// }
 
 class MyApp extends StatelessWidget {
   TextEditingController userNameController = TextEditingController();
   TextEditingController passController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Forms'),
+    return MaterialApp(
+      navigatorKey: AppRouter.router.navKey,
+      // routes: {
+      //   '/': (context) => MyForm(),
+      //   // 'home': (context) => HomePage(),
+      // },
+      // onGenerateRoute: (RouteSettings routesettings) {
+      //   String name = routesettings.name;
+      //   var arguments = routesettings.arguments;
+      //   switch (name) {
+      //     case ('/home'):
+      //       return MaterialPageRoute(builder: (context) {
+      //         return HomePage(arguments);
+      //       });
+      //       break;
+      //     case ('/login'):
+      //       return MaterialPageRoute(builder: (context) {
+      //         return LoginPage();
+      //       });
+      //       break;
+      //     default:
+      //       return MaterialPageRoute(builder: (context) {
+      //         return Scaffold(
+      //           backgroundColor: Colors.red,
+      //           body: Center(
+      //             child: Text('404 Page not found'),
+      //           ),
+      //         );
+      //       });
+      //   }
+      // },
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Forms'),
+        ),
+        body: Center(
+          child: MyForm(),
+        ),
       ),
-      // body: Column(
-      // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      // children: [
-      //   // CustomTextfield('username', userNameController),
-      //   // CustomTextfield('password', passController, true),
-      //   // ElevatedButton(
-      //   //   onPressed: () {},
-      //   //   child: Text(
-      //   //     'login',
-      //   //   ),
-      //   // ),
-      // ],
-      body: MyForm(),
+      // child: Scaffold(
+      //   appBar: AppBar(
+      //     title: Text('Forms'),
+      //   ),
+      //   // body: Column(
+      //   // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      //   // children: [
+      //   //   // CustomTextfield('username', userNameController),
+      //   //   // CustomTextfield('password', passController, true),
+      //   //   // ElevatedButton(
+      //   //   //   onPressed: () {},
+      //   //   //   child: Text(
+      //   //   //     'login',
+      //   //   //   ),
+      //   //   // ),
+      //   // ],
+      //   body: MyForm(),
+      // ),
       // ),
     );
   }

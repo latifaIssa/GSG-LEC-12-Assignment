@@ -4,6 +4,7 @@ import 'package:flutter_application_4/models/user_form.dart';
 import 'package:flutter_application_4/ui/register/LoginForm.dart';
 
 class HomePage extends StatelessWidget {
+  String name = 'Omar';
   FormUser formUser;
   HomePage(this.formUser);
   @override
@@ -24,7 +25,7 @@ class HomePage extends StatelessWidget {
           ElevatedButton(
             child: Text('SignOut'),
             onPressed: () {
-              Navigator.of(context).pop();
+              Navigator.of(context).pop('hello this message from home page');
             },
           )
         ],

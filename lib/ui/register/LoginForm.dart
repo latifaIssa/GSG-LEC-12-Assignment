@@ -21,6 +21,8 @@ class _MyFormState extends State<MyForm> {
 
   FormUser formUser;
 
+  get navigator => null;
+
   //after call this, all save function will be execute
   saveForm() {
     // formKey.currentState.save();
@@ -67,10 +69,16 @@ class _MyFormState extends State<MyForm> {
           Column(
             children: [
               this.groupValue == User.customer
-                  ? CustomerRegister(mershantKey)
-                  : MershantRegister(customerKey),
+                  ? CustomerRegister()
+                  : MershantRegister(),
             ],
           ),
+          // ElevatedButton(
+          //   child: Text('Login'),
+          //   onPressed: () {
+          //     navigator.pushNamed(context, '/login');
+          //   },
+          // ),
         ],
       ),
     );
