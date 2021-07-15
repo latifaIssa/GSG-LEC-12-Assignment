@@ -44,4 +44,47 @@ class FormUser {
       }));
     }
   }
+  factory FormUser.map(Map map) {
+    if (map['isMershant'] == true) {
+      return FormUser.mershant(
+          name: map['name'],
+          emailAddress: map['emailAddress'],
+          password: map['password'],
+          phone: map['phone'],
+          shopAddress: map['shopAddress'],
+          shopeName: map['shopeName'],
+          bio: map['bio'],
+          category: map['category']);
+    } else {
+      return FormUser.customer(
+        name: map['name'],
+        emailAddress: map['emailAddress'],
+        password: map['password'],
+        phone: map['phone'],
+      );
+    }
+  }
+
+  Map<String, dynamic> toMap() {
+    Map map = this.userType == User.customer
+        ? {
+            'isMershant': false,
+            'email': this.emailAddress,
+            'password': this.password,
+            'name': this.name,
+            'phone': this.phone,
+          }
+        : {
+            'isMershant': true,
+            'email': this.emailAddress,
+            'password': this.password,
+            'name': this.name,
+            'phone': this.phone,
+            'shopName': this.shopeName,
+            'shopAdress': this.shopAddress,
+            'category': this.category,
+            'bio': this.bio,
+          };
+    return map;
+  }
 }

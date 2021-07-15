@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_application_4/helpers/sharedprefernces_helper.dart';
 import 'package:flutter_application_4/models/user_form.dart';
 import 'package:flutter_application_4/ui/home/ui/home_page.dart';
 import 'package:flutter_application_4/ui/register/CustomerRegister.dart';
@@ -49,6 +50,7 @@ class _MyFormState extends State<MyForm> {
                   groupValue: groupValue,
                   onChanged: (v) {
                     this.groupValue = v;
+                    // SpHelper.spHelper.saveUserType('Customer');
                     setState(() {});
                   },
                 ),
@@ -60,6 +62,7 @@ class _MyFormState extends State<MyForm> {
                   groupValue: this.groupValue,
                   onChanged: (v) {
                     this.groupValue = v;
+                    // SpHelper.spHelper.saveUserType('Mershant');
                     setState(() {});
                   },
                 ),

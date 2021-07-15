@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_4/MyFormTextField.dart';
 import 'package:flutter_application_4/Router/router.dart';
+import 'package:flutter_application_4/helpers/sharedprefernces_helper.dart';
+import 'package:flutter_application_4/helpers/sharedprefernces_helper.dart';
 import 'package:flutter_application_4/models/user_form.dart';
 import 'package:flutter_application_4/ui/home/ui/home_page.dart';
 import 'package:flutter_application_4/ui/register/FormSubmitButton.dart';
@@ -115,6 +117,10 @@ class CustomerRegister extends StatelessWidget {
           ElevatedButton(
             onPressed: () async {
               if (formKey.currentState.validate()) {
+                // SpHelper.spHelper.saveUserName(name);
+                // SpHelper.spHelper.saveUserEmail(emailAddress);
+                // SpHelper.spHelper.saveUserPassword(password);
+                // SpHelper.spHelper.savePhone(phone);
                 formKey.currentState.save();
                 FormUser formUser = FormUser.customer(
                   name: name,
@@ -134,7 +140,10 @@ class CustomerRegister extends StatelessWidget {
 
                 // return result;
                 // print(result);
+                // print(SpHelper.spHelper.getUserType());
+                // if (SpHelper.spHelper.getUserType() != null) {
                 AppRouter.router.pushFunction(HomePage(formUser));
+                // }
               }
             },
             child: Text('Sign Up As Customer'),

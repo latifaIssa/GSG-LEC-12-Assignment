@@ -6,7 +6,11 @@ import 'package:flutter_application_4/ui/home/ui/home_page.dart';
 import 'package:flutter_application_4/ui/login/login.dart';
 import 'package:flutter_application_4/ui/register/LoginForm.dart';
 
-void main() {
+import 'helpers/sharedprefernces_helper.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized(); //when exist onther code to execute
+  await SpHelper.spHelper.initSharedPrefernces();
   runApp(MyApp());
 }
 

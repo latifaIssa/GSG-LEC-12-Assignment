@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_4/MyFormTextField.dart';
 import 'package:flutter_application_4/Router/router.dart';
+import 'package:flutter_application_4/helpers/sharedprefernces_helper.dart';
 import 'package:flutter_application_4/models/user_form.dart';
 import 'package:flutter_application_4/ui/home/ui/home_page.dart';
 import 'package:flutter_application_4/ui/register/FormSubmitButton.dart';
@@ -190,6 +191,15 @@ class _MershantRegisterState extends State<MershantRegister> {
             ElevatedButton(
               onPressed: () {
                 if (widget.formKey.currentState.validate()) {
+                  // SpHelper.spHelper.saveUserName(name);
+                  // SpHelper.spHelper.saveUserEmail(emailAddress);
+                  // SpHelper.spHelper.saveUserPassword(password);
+                  // SpHelper.spHelper.savePhone(phone);
+                  // SpHelper.spHelper.saveShopAddress(shopAddress);
+                  // SpHelper.spHelper.saveBio(bio);
+                  // SpHelper.spHelper.saveCategory(category);
+                  // SpHelper.spHelper.saveShopName(shopeName);
+
                   widget.formKey.currentState.save();
                   FormUser formUser = FormUser.mershant(
                     name: name,
@@ -237,7 +247,9 @@ class _MershantRegisterState extends State<MershantRegister> {
                   //     .pushNamed('home', arguments: formUser);
                   // // return result;
                   // print(result);
+                  // if (SpHelper.spHelper.getUserType() != null) {
                   AppRouter.router.pushFunction(HomePage(formUser));
+                  // }
                 }
               },
               child: Text('Sign Up As Mershant'),
