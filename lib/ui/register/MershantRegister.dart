@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_4/MyFormTextField.dart';
 import 'package:flutter_application_4/Router/router.dart';
 import 'package:flutter_application_4/helpers/sharedprefernces_helper.dart';
 import 'package:flutter_application_4/models/user_form.dart';
@@ -60,8 +59,7 @@ class _MershantRegisterState extends State<MershantRegister> {
         key: widget.formKey,
         child: Column(
           children: [
-            MyFormTextField(
-              isObscure: false,
+            TextFormField(
               decoration: InputDecoration(
                 labelText: "Name",
               ),
@@ -76,9 +74,7 @@ class _MershantRegisterState extends State<MershantRegister> {
               },
             ),
             //email
-            MyFormTextField(
-              isObscure: false,
-
+            TextFormField(
               // EmailAddress decoration
               decoration: InputDecoration(
                 labelText: "EmailAddress",
@@ -97,9 +93,7 @@ class _MershantRegisterState extends State<MershantRegister> {
               },
             ),
             // paasword
-            MyFormTextField(
-              isObscure: true,
-
+            TextFormField(
               // Password box decoration
               decoration: InputDecoration(
                   labelText: "Password", hintText: "my password"),
@@ -116,8 +110,7 @@ class _MershantRegisterState extends State<MershantRegister> {
               },
             ),
             //phone number
-            MyFormTextField(
-              isObscure: false,
+            TextFormField(
               decoration: InputDecoration(
                 labelText: "Phones",
               ),
@@ -132,8 +125,7 @@ class _MershantRegisterState extends State<MershantRegister> {
               },
             ),
             //shope Name
-            MyFormTextField(
-              isObscure: false,
+            TextFormField(
               decoration: InputDecoration(
                 labelText: "shope name",
               ),
@@ -148,8 +140,7 @@ class _MershantRegisterState extends State<MershantRegister> {
               },
             ),
             //shope Address
-            MyFormTextField(
-              isObscure: false,
+            TextFormField(
               decoration: InputDecoration(
                 labelText: "shope address",
               ),
@@ -164,8 +155,7 @@ class _MershantRegisterState extends State<MershantRegister> {
               },
             ),
             //Bio
-            MyFormTextField(
-              isObscure: false,
+            TextFormField(
               decoration: InputDecoration(
                 labelText: "Bio",
               ),
@@ -248,6 +238,7 @@ class _MershantRegisterState extends State<MershantRegister> {
                   // // return result;
                   // print(result);
                   // if (SpHelper.spHelper.getUserType() != null) {
+                  SpHelper.spHelper.saveUser(formUser);
                   AppRouter.router.pushFunction(HomePage(formUser));
                   // }
                 }

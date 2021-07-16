@@ -85,6 +85,6 @@ class FormUser {
             'category': this.category,
             'bio': this.bio,
           };
-    return map;
+    return {...map};
   }
 }

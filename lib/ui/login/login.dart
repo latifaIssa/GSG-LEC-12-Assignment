@@ -2,8 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:string_validator/string_validator.dart';
 
-import '../../MyFormTextField.dart';
-
 class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -12,9 +10,7 @@ class LoginPage extends StatelessWidget {
       child: Column(
         children: [
           //email
-          MyFormTextField(
-            isObscure: false,
-
+          TextFormField(
             // EmailAddress decoration
             decoration: InputDecoration(
               labelText: "EmailAddress",
@@ -33,9 +29,7 @@ class LoginPage extends StatelessWidget {
             // },
           ),
           // paasword
-          MyFormTextField(
-            isObscure: true,
-
+          TextFormField(
             // Password box decoration
             decoration:
                 InputDecoration(labelText: "Password", hintText: "my password"),

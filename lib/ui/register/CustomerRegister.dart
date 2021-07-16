@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_4/MyFormTextField.dart';
 import 'package:flutter_application_4/Router/router.dart';
 import 'package:flutter_application_4/helpers/sharedprefernces_helper.dart';
 import 'package:flutter_application_4/helpers/sharedprefernces_helper.dart';
@@ -43,8 +42,7 @@ class CustomerRegister extends StatelessWidget {
       child: Column(
         children: [
           //name
-          MyFormTextField(
-            isObscure: false,
+          TextFormField(
             decoration: InputDecoration(
               labelText: "Name",
             ),
@@ -59,9 +57,7 @@ class CustomerRegister extends StatelessWidget {
             // },
           ),
           //email
-          MyFormTextField(
-            isObscure: false,
-
+          TextFormField(
             // EmailAddress decoration
             decoration: InputDecoration(
               labelText: "EmailAddress",
@@ -80,9 +76,7 @@ class CustomerRegister extends StatelessWidget {
             },
           ),
           // paasword
-          MyFormTextField(
-            isObscure: true,
-
+          TextFormField(
             // Password box decoration
             decoration:
                 InputDecoration(labelText: "Password", hintText: "my password"),
@@ -99,8 +93,7 @@ class CustomerRegister extends StatelessWidget {
             },
           ),
           //phone number
-          MyFormTextField(
-            isObscure: false,
+          TextFormField(
             decoration: InputDecoration(
               labelText: "Phones",
             ),
@@ -142,6 +135,7 @@ class CustomerRegister extends StatelessWidget {
                 // print(result);
                 // print(SpHelper.spHelper.getUserType());
                 // if (SpHelper.spHelper.getUserType() != null) {
+                SpHelper.spHelper.saveUser(formUser);
                 AppRouter.router.pushFunction(HomePage(formUser));
                 // }
               }

@@ -5,6 +5,7 @@ import 'package:flutter_application_4/models/user_form.dart';
 import 'package:flutter_application_4/ui/home/ui/home_page.dart';
 import 'package:flutter_application_4/ui/login/login.dart';
 import 'package:flutter_application_4/ui/register/LoginForm.dart';
+import 'package:flutter_application_4/ui/register/splach_screen.dart';
 
 import 'helpers/sharedprefernces_helper.dart';
 
@@ -108,7 +109,7 @@ class MyApp extends StatelessWidget {
           title: Text('Forms'),
         ),
         body: Center(
-          child: MyForm(),
+          child: SplachScreen(),
         ),
       ),
       // child: Scaffold(

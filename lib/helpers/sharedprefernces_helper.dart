@@ -3,6 +3,8 @@ import 'dart:convert';
 import 'package:flutter_application_4/models/user_form.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../globals.dart';
+
 class SpHelper {
   SpHelper._();
   static SpHelper spHelper = SpHelper._();
@@ -93,13 +95,26 @@ class SpHelper {
   // }
 
   saveUser(FormUser formUser) {
-    sharedPreferences.setString('user', json.encode(formUser.toMap()));
+    sharedPreferences.setString('formUser', json.encode({...formUser.toMap()}));
   }
 
-  getUser() {
-    String user = sharedPreferences.getString('user');
+  FormUser getUser() {
+    // try {
+    String user = sharedPreferences.getString('formUser');
+    if (user == null) {
+      return null;
+    }
+    assert(user != null);
     Map userMap = json.decode(user);
     FormUser formUser = FormUser.map(userMap);
     Globals.globals.formUser = formUser;
+    return formUser;
+    // } on Exception catch (e) {
+    //   return null;
+    // }
+  }
+
+  signOut() {
+    sharedPreferences.remove('formUser');
   }
 }
