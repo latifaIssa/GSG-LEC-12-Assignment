@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_4/helper/files_helper.dart';
+import 'package:flutter_application_4/helper/url_launcher_helper.dart';
 import 'package:flutter_application_4/models/user_form.dart';
 import 'package:flutter_application_4/ui/register/LoginForm.dart';
 
@@ -25,7 +27,18 @@ class HomePage extends StatelessWidget {
           ElevatedButton(
             child: Text('SignOut'),
             onPressed: () {
-              Navigator.of(context).pop('hello this message from home page');
+              // Navigator.of(context).pop('hello this message from home page');
+              // FilesHelper.filesHelper.writeInFile('gsk');
+              // FilesHelper.filesHelper.readFromFile('gsk');
+              // UrlLauncherHelper.urlLauncherHelper.makeCall();
+              // UrlLauncherHelper.urlLauncherHelper.sendEmail();
+              // UrlLauncherHelper.urlLauncherHelper.openFacebookPage();
+              // UrlLauncherHelper.urlLauncherHelper.sendSMS();
+              // UrlLauncherHelper.urlLauncherHelper.openInstegramPage();
+              // UrlLauncherHelper.urlLauncherHelper.openWebPath();
+              // UrlLauncherHelper.urlLauncherHelper.openWhatsupChat();
+              // UrlLauncherHelper.urlLauncherHelper.shareContent();
+              UrlLauncherHelper.urlLauncherHelper.shareImages();
             },
           )
         ],
