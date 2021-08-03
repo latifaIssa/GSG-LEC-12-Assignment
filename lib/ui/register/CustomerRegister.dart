@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_4/MyFormTextField.dart';
 import 'package:flutter_application_4/Router/router.dart';
+import 'package:flutter_application_4/helper/db_helper.dart';
 import 'package:flutter_application_4/models/user_form.dart';
 import 'package:flutter_application_4/ui/home/ui/home_page.dart';
 import 'package:flutter_application_4/ui/register/FormSubmitButton.dart';
@@ -122,6 +123,7 @@ class CustomerRegister extends StatelessWidget {
                   password: password,
                   phone: phone,
                 );
+
                 // String result = await Navigator.of(context).push(
                 //   MaterialPageRoute(
                 //     builder: (context) {

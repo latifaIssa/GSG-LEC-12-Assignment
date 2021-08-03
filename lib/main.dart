@@ -1,12 +1,16 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_4/Router/router.dart';
+import 'package:flutter_application_4/helper/db_helper.dart';
 import 'package:flutter_application_4/models/user_form.dart';
 import 'package:flutter_application_4/ui/home/ui/home_page.dart';
+import 'package:flutter_application_4/ui/home/ui/tasks_page.dart';
 import 'package:flutter_application_4/ui/login/login.dart';
 import 'package:flutter_application_4/ui/register/LoginForm.dart';
 
-void main() {
+void main() async {
+  // WidgetsFlutterBinding.ensureInitialized();
+  // await DbHelper.dbHelper.initDatabase();
   runApp(MyApp());
 }
 
@@ -100,11 +104,8 @@ class MyApp extends StatelessWidget {
       //   }
       // },
       home: Scaffold(
-        appBar: AppBar(
-          title: Text('Forms'),
-        ),
         body: Center(
-          child: MyForm(),
+          child: TaskPage(),
         ),
       ),
       // child: Scaffold(

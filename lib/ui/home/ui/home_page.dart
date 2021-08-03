@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_4/helper/db_helper.dart';
 import 'package:flutter_application_4/helper/files_helper.dart';
 import 'package:flutter_application_4/helper/url_launcher_helper.dart';
+import 'package:flutter_application_4/models/task.dart';
 import 'package:flutter_application_4/models/user_form.dart';
 import 'package:flutter_application_4/ui/register/LoginForm.dart';
 
@@ -26,7 +28,7 @@ class HomePage extends StatelessWidget {
           ),
           ElevatedButton(
             child: Text('SignOut'),
-            onPressed: () {
+            onPressed: () async {
               // Navigator.of(context).pop('hello this message from home page');
               // FilesHelper.filesHelper.writeInFile('gsk');
               // FilesHelper.filesHelper.readFromFile('gsk');
@@ -38,7 +40,18 @@ class HomePage extends StatelessWidget {
               // UrlLauncherHelper.urlLauncherHelper.openWebPath();
               // UrlLauncherHelper.urlLauncherHelper.openWhatsupChat();
               // UrlLauncherHelper.urlLauncherHelper.shareContent();
-              UrlLauncherHelper.urlLauncherHelper.shareImages();
+              // UrlLauncherHelper.urlLauncherHelper.shareImages();
+
+              // DbHelper.dbHelper.getDatabaseConnection();
+              // TaskModel taskModel =
+              //     TaskModel(name: 'working', isComplete: true);
+              // DbHelper.dbHelper.insertTask(taskModel);
+              // List<TaskModel> tasks = await DbHelper.dbHelper.getAllTask();
+              // print(tasks.first.name);
+
+              // TaskModel taskModel1 =
+              //     TaskModel(id: 2, name: 'reading', isComplete: true);
+              // DbHelper.dbHelper.insertTask(taskModel1);
             },
           )
         ],
